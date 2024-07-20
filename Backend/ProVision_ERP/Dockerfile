@@ -1,6 +1,5 @@
-FROM amazoncorretto:21-alpine-jdk
+FROM openjdk:17-jdk-slim
+COPY ./target/ProVision_ERP-0.0.1-SNAPSHOT.jar "app.jar"
 
-COPY target/ProVision_ERP-0.0.1-SNAPSHOT.jar app.jar
-
-ENTRYPOINT [ "java", "-jar" , "/app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
 
