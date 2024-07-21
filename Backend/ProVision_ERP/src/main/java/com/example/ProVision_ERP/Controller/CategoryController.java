@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,9 +18,13 @@ import com.example.ProVision_ERP.Model.Category;
 import com.example.ProVision_ERP.Services.CategoryService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
-@RequestMapping("/category")
+@Slf4j
+
 @RestController
+@RequestMapping("/category")
 @SecurityRequirement(name = "bearer-key")
 public class CategoryController {
     
@@ -44,12 +49,9 @@ public class CategoryController {
     }
 
     @PostMapping("/create")
-    private ResponseEntity<Category> create (@RequestBody CategoryDTO dto) {
-        try {
-            Category category = categoryService.createCategory(dto);
-            return ResponseEntity.status(HttpStatus.CREATED).body(category);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(null);
-        }
+    private ResponseEntity<Category> create (@RequestBody @Valid CategoryDTO dto) {
+        log.info("Received DTO: {}", dto);
+        Category category = categoryService.createCategory(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(category);
     }
 }

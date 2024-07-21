@@ -20,6 +20,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,14 +40,20 @@ public class User implements UserDetails{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull(message = "The Password is required")
     private String passWord;
-
+    @NotNull(message = "The Name is required")
     private String name;
+
+    @NotNull(message = "The LastName is required")
     private String lastname;
 
+    @NotEmpty(message = "The email is required.")
+    @Email(message = "The Email Is Invalid")
     @Column(unique = true)
     private String email;
 
+    @NotNull(message = "The Telephone is required")
     private String telephone;
 
     @CreationTimestamp

@@ -23,10 +23,12 @@ public class CategoryService {
     }
 
     public Category createCategory (CategoryDTO dto) {
+
+        System.out.println(dto);
+        
         Category category = new Category();
         category.setName(dto.getName());
         category.setDescription(dto.getDescription());
-
         return categoryRepository.save(category);
     }
 

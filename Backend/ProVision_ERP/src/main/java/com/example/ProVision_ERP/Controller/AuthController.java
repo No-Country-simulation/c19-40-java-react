@@ -16,6 +16,7 @@ import com.example.ProVision_ERP.Model.User;
 import com.example.ProVision_ERP.Services.AuthService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
@@ -35,7 +36,7 @@ public class AuthController {
 
     @PostMapping("/register")
     @Operation(security = { })
-    public ResponseEntity<User> register (@RequestBody RegisterRequest registerRequest) {
+    public ResponseEntity<User> register (@RequestBody @Valid RegisterRequest registerRequest) {
         User registeredUser = authService.Signup(registerRequest);
 
         return ResponseEntity.ok(registeredUser);
@@ -44,7 +45,7 @@ public class AuthController {
 
     @PostMapping("/login")
     @Operation(security = { })
-    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest){
+    public ResponseEntity<LoginResponse> login(@RequestBody @Valid LoginRequest loginRequest){
 
         System.out.println("ingreso al login");
         User authUser = authService.login(loginRequest);
