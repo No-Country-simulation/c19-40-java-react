@@ -1,6 +1,5 @@
 package com.example.ProVision_ERP.Dto;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;

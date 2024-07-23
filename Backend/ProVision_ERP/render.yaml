@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: provision-erp
+    env: docker
+    buildCommand: ./mvnw package -DskipTests
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://mysql:3306/provision_erp
+      - key: SPRING_DATASOURCE_USERNAME
+        value: root
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: MYSQL_ROOT_PASSWORD
+      - key: SPRING_SECURITY_USER_NAME
+        value: root
+      - key: SPRING_SECURITY_USER_PASSWORD
+        generateValue: true
+      - key: SECURITY_JWT_SECRET_KEY
+        generateValue: true
+
+  - type: web
+    name: mysql
+    env: docker
+    dockerfilePath: ./Dockerfile.mysql
+    dockerContext: .
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        generateValue: true
+
+envVarGroups:
+  - name: mysql-config
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        generateValue: true

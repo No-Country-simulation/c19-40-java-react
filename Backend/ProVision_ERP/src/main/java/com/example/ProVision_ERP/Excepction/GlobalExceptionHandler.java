@@ -11,13 +11,10 @@ import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AccountStatusException;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.parameters.P;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.example.ProVision_ERP.Dto.CustomErrorResponse;
@@ -34,27 +31,27 @@ public class GlobalExceptionHandler {
     public ResponseEntity<CustomErrorResponse> handleValidationExceptions(MethodArgumentNotValidException ex) {
         BindingResult bindingResult = ex.getBindingResult();
         FieldError fieldError = bindingResult.getFieldError();
-        
+
         Map<String, String> errors = new HashMap<>();
         if (fieldError != null) {
             errors.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
-        
+
         CustomErrorResponse errorResponse = new CustomErrorResponse("Validation Failed", errors);
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
-        @ExceptionHandler(ConstraintViolationException.class)
+    @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<CustomErrorResponse> handleConstraintViolation(ConstraintViolationException ex) {
         Set<ConstraintViolation<?>> violations = ex.getConstraintViolations();
         Map<String, String> errors = new HashMap<>();
-        
+
         for (ConstraintViolation<?> violation : violations) {
             String propertyPath = violation.getPropertyPath().toString();
             String message = violation.getMessage();
             errors.put(propertyPath, message);
         }
-        
+
         CustomErrorResponse errorResponse = new CustomErrorResponse("Validation Failed", errors);
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
