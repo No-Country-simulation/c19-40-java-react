@@ -30,7 +30,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class User implements UserDetails{
+public class Users implements UserDetails{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

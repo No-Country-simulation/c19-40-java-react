@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import com.example.ProVision_ERP.Dto.LoginRequest;
 import com.example.ProVision_ERP.Dto.RegisterRequest;
 import com.example.ProVision_ERP.Model.Rol;
-import com.example.ProVision_ERP.Model.User;
+import com.example.ProVision_ERP.Model.Users;
 import com.example.ProVision_ERP.Repository.RolRepository;
 import com.example.ProVision_ERP.Repository.UserRepository;
 
@@ -34,7 +34,7 @@ public class AuthService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    public User Signup(RegisterRequest dto) {
+    public Users Signup(RegisterRequest dto) {
         System.out.println(dto.getRol());
         Rol rol = rolRepository.findByName(dto.getRol());
         if (rol == null) {
@@ -43,7 +43,7 @@ public class AuthService {
         
         Set<Rol> roles = new HashSet<>();
         roles.add(rol);
-        User user = new User()
+        Users user = new Users()
         .setPassWord(passwordEncoder.encode(dto.getPassWord()))
         .setName(dto.getName())
         .setLastname(dto.getLastname())
@@ -54,7 +54,7 @@ public class AuthService {
         return userRepository.save(user);
     }
 
-public User login(LoginRequest dto) {
+public Users login(LoginRequest dto) {
     try {
         System.out.println("Ingreso a service login");
         System.out.println(dto.getEmail());

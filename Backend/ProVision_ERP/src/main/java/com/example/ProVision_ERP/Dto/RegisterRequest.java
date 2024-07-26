@@ -10,7 +10,7 @@ public class RegisterRequest {
 
     private String PassWord;
 
-    @NotBlank(message = "The Name is required")
+    @NotNull(message = "The Name is required")
     private String name;
 
     @NotBlank(message = "The LastName is required")

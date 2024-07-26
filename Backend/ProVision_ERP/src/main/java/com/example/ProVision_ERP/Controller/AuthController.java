@@ -12,7 +12,7 @@ import com.example.ProVision_ERP.Config.JwtService;
 import com.example.ProVision_ERP.Dto.LoginRequest;
 import com.example.ProVision_ERP.Dto.LoginResponse;
 import com.example.ProVision_ERP.Dto.RegisterRequest;
-import com.example.ProVision_ERP.Model.User;
+import com.example.ProVision_ERP.Model.Users;
 import com.example.ProVision_ERP.Services.AuthService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -36,8 +36,8 @@ public class AuthController {
 
     @PostMapping("/register")
     @Operation(security = { })
-    public ResponseEntity<User> register (@RequestBody @Valid RegisterRequest registerRequest) {
-        User registeredUser = authService.Signup(registerRequest);
+    public ResponseEntity<Users> register (@RequestBody @Valid RegisterRequest registerRequest) {
+        Users registeredUser = authService.Signup(registerRequest);
 
         return ResponseEntity.ok(registeredUser);
     }
@@ -48,7 +48,7 @@ public class AuthController {
     public ResponseEntity<LoginResponse> login(@RequestBody @Valid LoginRequest loginRequest){
 
         System.out.println("ingreso al login");
-        User authUser = authService.login(loginRequest);
+        Users authUser = authService.login(loginRequest);
         System.out.println("ingreso authentication");
         String jwtToken = jwtService.generateToken(authUser);
         System.out.println(jwtToken);
