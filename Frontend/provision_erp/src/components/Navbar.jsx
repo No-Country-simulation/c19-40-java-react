@@ -1,46 +1,100 @@
 import React, { useState } from 'react';
 
-const NavBar = () => {
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuVisible(!isMenuVisible);
+    setIsOpen(!isOpen);
+  };
+
+  const toggleProfile = () => {
+    setIsProfileOpen(!isProfileOpen);
   };
 
   return (
     <>
-      <nav className="bg-principal-color flex items-center justify-between p-4 relative">
-        <div className="text-white text-xl font-bold">ProVision</div>
-
-        <div className="hidden md:flex space-x-4">
-          <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-blue-500">Home</a>
-          <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-blue-500">About us</a>
-          <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-blue-500">Features</a>
-          <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-blue-500">Contact us</a>
-        </div>
-
-        <button onClick={toggleMenu}>
-          <img className="h-8 w-8 rounded-full" src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg" alt="User Avatar"/>
+      <nav className="relative flex items-center justify-between bg-principal-color h-24 px-6 lg:px-12">
+        
+        <button
+          className="lg:hidden"
+          onClick={toggleMenu}
+        >
+          <svg
+            className="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
         </button>
-      </nav>
 
-      <div className={`fixed top-0 right-0 bg-principal-color flex flex-col items-center space-y-4 p-4 rounded-lg z-20 ${isMenuVisible ? 'block' : 'hidden'}`}>
-        <div className="space-x-3 p-3 flex items-center">
-          <img className="h-8 w-8 rounded-full" src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg" alt="User Avatar"/>
-          <p className="text-white text-sm font-medium hover:bg-blue-500 rounded-md px-4 py-2">Your Enterprise</p>
-          <button onClick={toggleMenu} className="text-white text-xl">
-            x
-          </button>
+        <p className="text-white text-2xl mx-auto lg:mx-0">ProVision</p>
+
+        
+
+        {/* Menú en pantallas grandes */}
+        <div className="hidden lg:flex lg:space-x-8 lg:text-white">
+          <a href="#" className="px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Home</a>
+          <a href="#" className="px-2 py-2 hover:bg-blue-600 hover:rounded-lg">About us</a>
+          <a href="#" className="px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Features</a>
+          <a href="#" className="px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Contact us</a>
         </div>
 
-        <hr className="border-1 w-full"/>
+        <button
+          className="relative z-20"
+          onClick={toggleProfile}
+        >
+          <img
+            className="h-10 w-10 rounded-full"
+            src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg"
+            alt="Not found"
+          />
+        </button>
 
-        <a href="#" className="text-white text-sm font-medium hover:bg-blue-500 rounded-md px-4 py-2">Your Profile</a>
-        <a href="#" className="text-white text-sm font-medium hover:bg-blue-500 rounded-md px-4 py-2">Settings</a>
-        <a href="#" className="text-white text-sm font-medium hover:bg-blue-500 rounded-md px-4 py-2">Log out</a>
-      </div>
+        {/* Menú desplegable en pantallas pequeñas */}
+        {isOpen && (
+          <div className="absolute top-16 left-0 w-full bg-principal-color rounded-lg shadow-lg z-30 lg:hidden">
+            <div className="text-white flex flex-col items-center pt-4 space-y-3">
+                {/* Menú desplegable en pantallas pequeñas */}
+              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Home</a>
+              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">About us</a>
+              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Features</a>
+              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Contact us</a>
+            </div>
+          </div>
+        )}
+
+        {/* Menú desplegable del perfil */}
+        {isProfileOpen && (
+          <div className="absolute top-3 right-0 w-60 bg-principal-color rounded-lg shadow-lg z-30">
+            <div className="text-white flex flex-col items-center pt-4 space-y-3">
+              <div className='flex flex-row space-x-4 items-center justify-center'>
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg"
+                  alt="Not found"
+                />
+                <p>Enterprise Name</p>
+                <button onClick={toggleProfile}>x</button>
+              </div>
+              <hr className='w-full border-white border-1' />
+              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Your Profile</a>
+              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Settings</a>
+              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Log Out</a>
+            </div>
+          </div>
+        )}
+      </nav>
     </>
   );
 };
 
-export default NavBar;
+export default Navbar;
