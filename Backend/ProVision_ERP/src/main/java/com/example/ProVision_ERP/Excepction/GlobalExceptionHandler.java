@@ -56,38 +56,40 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(Exception.class)
-    public ProblemDetail handleSecurityException(Exception exception) {
-        ProblemDetail errorDetail = null;
-        exception.printStackTrace();
+    @ExceptionHandler({Exception.class, MissingTokenException.class, ExpiredJwtException.class})
+    public ResponseEntity<CustomErrorResponse> handleSecurityException(Exception exception) {
+        CustomErrorResponse errorResponse;
+        HttpStatus status;
+        
+        Map<String, String> errors = new HashMap<>();
 
-        if (exception instanceof BadCredentialsException) {
-            errorDetail = ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(401), exception.getMessage());
-            errorDetail.setProperty("Description", "The username or password is incorrect");
-            return errorDetail;
+        if (exception instanceof MissingTokenException || exception instanceof ExpiredJwtException) {
+            status = HttpStatus.UNAUTHORIZED;
+            errors.put("Description", exception.getMessage());
+            errorResponse = new CustomErrorResponse("Authentication Failed", errors);
+        } else if (exception instanceof BadCredentialsException) {
+            status = HttpStatus.UNAUTHORIZED;
+            errors.put("Description", "The username or password is incorrect");
+            errorResponse = new CustomErrorResponse("Authentication Failed", errors);
+        } else if (exception instanceof AccountStatusException) {
+            status = HttpStatus.FORBIDDEN;
+            errors.put("Description", "The account is locked");
+            errorResponse = new CustomErrorResponse("Account Locked", errors);
+        } else if (exception instanceof AccessDeniedException) {
+            status = HttpStatus.FORBIDDEN;
+            errors.put("Description", "You are not authorized to access this resource");
+            errorResponse = new CustomErrorResponse("Access Denied", errors);
+        } else if (exception instanceof SignatureException) {
+            status = HttpStatus.FORBIDDEN;
+            errors.put("Description", "The JWT signature is invalid");
+            errorResponse = new CustomErrorResponse("Invalid JWT", errors);
+        } else {
+            status = HttpStatus.INTERNAL_SERVER_ERROR;
+            errors.put("Description", "Unknown internal server error.");
+            errorResponse = new CustomErrorResponse("Internal Server Error", errors);
         }
-        if (exception instanceof AccountStatusException) {
-            errorDetail = ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(403), exception.getMessage());
-            errorDetail.setProperty("Description", "The account is locked");
-            return errorDetail;
-        }
-        if (exception instanceof AccessDeniedException) {
-            errorDetail = ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(403), exception.getMessage());
-            errorDetail.setProperty("Description", "You are not authorized to access this resource");
-        }
-        if (exception instanceof SignatureException) {
-            errorDetail = ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(403), exception.getMessage());
-            errorDetail.setProperty("Description", "The JWT signature is invalid");
-        }
-        if (exception instanceof ExpiredJwtException) {
-            errorDetail = ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(403), exception.getMessage());
-            errorDetail.setProperty("Description", "The JWT has expired");
-        }
-        if (errorDetail == null) {
-            errorDetail = ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(500), exception.getMessage());
-            errorDetail.setProperty("Description", "Unknown internal server error.");
-        }
-
-        return errorDetail;
+        
+        errors.put("message", exception.getMessage());
+        return new ResponseEntity<>(errorResponse, status);
     }
 }
