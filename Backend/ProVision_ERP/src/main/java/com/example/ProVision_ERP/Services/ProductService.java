@@ -53,7 +53,7 @@ public class ProductService {
         if(dto.getDescription() != null && dto.getDescription().isEmpty()) {
             product.setDescription(dto.getDescription());
         }
-        if(dto.getPrice() != null && dto.getPrice().isEmpty()) {
+        if(dto.getPrice() != null ) {
             product.setPrice(dto.getPrice());
         }
         if(dto.getQuantity() != null) {

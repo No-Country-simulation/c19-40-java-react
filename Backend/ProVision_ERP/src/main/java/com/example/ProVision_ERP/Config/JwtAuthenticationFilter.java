@@ -1,6 +1,8 @@
 package com.example.ProVision_ERP.Config;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -35,6 +37,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    // Lista de rutas que no requieren autenticación
+    private List<String> excludedPaths = Arrays.asList("/swagger-ui/", "/docu/api-docs", "/auth/");
+
     @Override
     protected void doFilterInternal(
         @NonNull HttpServletRequest request,
@@ -42,12 +47,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
         try {
+            // Verificar si la ruta actual está en la lista de exclusiones
+            String path = request.getRequestURI();
+            if (isExcludedPath(path)) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+
             final String authHeader = request.getHeader("Authorization");
             System.out.println("Header Authorization: " + authHeader);
 
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
                 System.out.println("No se encontró un token válido.");
-                throw new MissingTokenException("No se proporciono un token de autenticacion valido");
+                throw new MissingTokenException("No se proporcionó un token de autenticación válido");
             }
 
             final String jwt = authHeader.substring(7);
@@ -88,10 +100,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             System.out.println("Excepción de token: " + e.getMessage());
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.getWriter().write(e.getMessage());
-            return; // Importante: no continuar con el filterChain
         } catch (Exception exception) {
             System.out.println("Excepción durante la autenticación: " + exception.getMessage());
             handlerExceptionResolver.resolveException(request, response, null, exception);
         }
+    }
+
+    private boolean isExcludedPath(String path) {
+        return excludedPaths.stream().anyMatch(path::startsWith);
     }
 }
