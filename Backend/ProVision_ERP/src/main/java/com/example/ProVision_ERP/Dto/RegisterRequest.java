@@ -1,5 +1,7 @@
 package com.example.ProVision_ERP.Dto;
 
+import com.example.ProVision_ERP.Validation.StrongPassword;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -8,6 +10,7 @@ import lombok.Data;
 @Data
 public class RegisterRequest {
 
+    @StrongPassword
     private String PassWord;
 
     @NotNull(message = "The Name is required")

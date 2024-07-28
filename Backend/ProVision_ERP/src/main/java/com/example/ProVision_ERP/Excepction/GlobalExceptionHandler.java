@@ -56,6 +56,15 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(EmailAllReadyExistsException.class)
+    public ResponseEntity<CustomErrorResponse> handleEmailAlreadyExists (EmailAllReadyExistsException ex) {
+        Map<String, String> errors = new HashMap<>();
+        errors.put("Email", ex.getMessage());
+
+        CustomErrorResponse errorResponse = new CustomErrorResponse("Conflict", errors);
+        return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
+    }
+
     @ExceptionHandler({Exception.class, MissingTokenException.class, ExpiredJwtException.class})
     public ResponseEntity<CustomErrorResponse> handleSecurityException(Exception exception) {
         CustomErrorResponse errorResponse;

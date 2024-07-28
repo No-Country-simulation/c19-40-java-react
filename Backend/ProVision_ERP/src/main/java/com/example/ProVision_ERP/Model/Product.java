@@ -1,5 +1,6 @@
 package com.example.ProVision_ERP.Model;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -31,7 +32,8 @@ public class Product {
     
     private String name;
     private String description;
-    private String price;
+    @Column(columnDefinition = "numeric(38,2)")
+    private BigDecimal price;
     private BigInteger quantity;
     private BigInteger discount;
 

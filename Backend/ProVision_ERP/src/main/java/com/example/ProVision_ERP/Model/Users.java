@@ -10,6 +10,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.example.ProVision_ERP.Validation.StrongPassword;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -37,6 +39,7 @@ public class Users implements UserDetails{
     private Long id;
 
     @NotNull(message = "The Password is required")
+    @StrongPassword
     private String passWord;
     @NotNull(message = "The Name is required")
     private String name;
