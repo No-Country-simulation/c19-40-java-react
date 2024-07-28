@@ -36,16 +36,16 @@ const Navbar = () => {
           </svg>
         </button>
 
-        <p className="text-white text-2xl mx-auto lg:mx-0">ProVision</p>
+        <p className="text-white text-3xl mx-auto lg:mx-0">ProVision</p>
 
         
 
         {/* Menú en pantallas grandes */}
         <div className="hidden lg:flex lg:space-x-8 lg:text-white">
-          <a href="#" className="px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Home</a>
-          <a href="#" className="px-2 py-2 hover:bg-blue-600 hover:rounded-lg">About us</a>
-          <a href="#" className="px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Features</a>
-          <a href="#" className="px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Contact us</a>
+          <a href="#" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Home</a>
+          <a href="#" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">About us</a>
+          <a href="#" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Features</a>
+          <a href="#" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Contact us</a>
         </div>
 
         <button
@@ -64,10 +64,10 @@ const Navbar = () => {
           <div className="absolute top-16 left-0 w-full bg-principal-color rounded-lg shadow-lg z-30 lg:hidden">
             <div className="text-white flex flex-col items-center pt-4 space-y-3">
                 {/* Menú desplegable en pantallas pequeñas */}
-              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Home</a>
-              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">About us</a>
-              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Features</a>
-              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Contact us</a>
+              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Home</a>
+              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">About us</a>
+              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Features</a>
+              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Contact us</a>
             </div>
           </div>
         )}
