@@ -1,6 +1,7 @@
 package com.example.ProVision_ERP.Services;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.ProVision_ERP.Dto.LoginRequest;
 import com.example.ProVision_ERP.Dto.RegisterRequest;
+import com.example.ProVision_ERP.Excepction.EmailAllReadyExistsException;
 import com.example.ProVision_ERP.Model.Rol;
 import com.example.ProVision_ERP.Model.Users;
 import com.example.ProVision_ERP.Repository.RolRepository;
@@ -35,6 +37,12 @@ public class AuthService {
     private AuthenticationManager authenticationManager;
 
     public Users Signup(RegisterRequest dto) {
+
+
+        Optional<Users> existingUser = userRepository.findByEmail(dto.getEmail());
+        if (existingUser.isPresent()) {
+            throw new EmailAllReadyExistsException("Correo Ya En Uso");
+        }
         System.out.println(dto.getRol());
         Rol rol = rolRepository.findByName(dto.getRol());
         if (rol == null) {
