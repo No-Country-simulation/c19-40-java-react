@@ -76,7 +76,7 @@ const Home = () => {
         <section className="flex flex-col text-center items-center space-y-10 px-4">
           <h2 className="text-3xl md:text-5xl">Descubre la genialidad de ProVision</h2>
           <iframe
-            width="100%"
+            width="80%"
             height="415"
             src="https://www.youtube.com/embed/I6v4QMIlkRo?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0"
             title="Video Promocional"
@@ -86,11 +86,11 @@ const Home = () => {
           ></iframe>
         </section>
 
-        <section className="mt-20 flex flex-col items-center text-center space-y-10 px-4">
+        <section className="mt-20 flex flex-col items-center space-y-10 px-4">
 
-          <div className="flex flex-col md:flex-row items-center text-center space-y-10 md:space-y-0 md:space-x-20">
+          <div className="flex flex-col md:flex-row items-start md:items-center text-left space-y-10 md:space-y-0 md:space-x-20">
 
-            <div className="flex flex-col space-y-10">
+            <div className="flex flex-col space-y-10 md:items-start">
               <h2 className="text-2xl md:text-3xl font-bold">
                 Gestión De Ventas
               </h2>
@@ -106,11 +106,11 @@ const Home = () => {
           </div>
 
 
-          <div className="flex flex-col md:flex-row items-center text-center space-y-10 md:space-y-0 md:space-x-20">
+          <div className="flex flex-col md:flex-row items-start md:items-center text-left space-y-10 md:space-y-0 md:space-x-20">
 
             <img className="w-full max-w-sm h-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAqifEgo22eETRilQkjuSxrbo2ERklcFVGHQ&s" alt="Gestión de Compras" />
 
-            <div className="flex flex-col space-y-10">
+            <div className="flex flex-col space-y-10 md:items-start">
               <h2 className="text-2xl md:text-3xl font-bold">
                 Gestión De Compras
               </h2>
@@ -125,9 +125,9 @@ const Home = () => {
 
           </div>
 
-          <div className="flex flex-col md:flex-row items-center text-center space-y-10 md:space-y-0 md:space-x-20">
+          <div className="flex flex-col md:flex-row items-start md:items-center text-left space-y-10 md:space-y-0 md:space-x-20">
 
-            <div className="flex flex-col space-y-10">
+            <div className="flex flex-col space-y-10 ">
               <h2 className="text-2xl md:text-3xl font-bold">
                 Gestión De Inventario
               </h2>
@@ -151,7 +151,7 @@ const Home = () => {
             MEJORA TU NEGOCIO ÚNETE AHORA
           </h1>
 
-          <button className="bg-principal-color px-10 md:px-16 py-6 md:py-12 rounded-lg text-2xl md:text-4xl font-bold text-white">
+          <button className="bg-principal-color px-10 md:px-16 py-6 md:py-12 rounded-lg text-2xl md:text-4xl font-bold text-white hover:bg-blue-600">
             Empezar
           </button>
 
