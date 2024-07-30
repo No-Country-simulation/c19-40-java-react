@@ -17,8 +17,8 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 #Equipo
 | Nombre            | GitHub                                                 | Rol                                              |
 |-------------------|--------------------------------------------------------|-------------------------------------------------------|
-| Freddy Guzman | [![GitHub](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/santiago) | Backend |
-| Jefferson Peña | [![GitHub](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/agustin) | Frontend |
-| Benjamin Matos  | [![GitHub](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/michael) | Tester QA |
-| Luiggi Rosas      | [![GitHub](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maribel) | Frontend |
+| Freddy Guzman | [](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/santiago) | Backend |
+| Jefferson Peña | [](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/agustin) | Frontend |
+| Benjamin Matos  | [](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/michael) | Tester QA |
+| Luiggi Rosas      | [](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maribel) | Frontend |
 
