@@ -16,8 +16,8 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 
 #Equipo
 | Nombre            | Rol                                              |
-|-------------------|--------------------------------------------------------|-------------------------------------------------------|
-| Freddy Guzman | Backend |
+|-------------------|--------------------------------------------------------|
+| Freddy Guzman  | Backend |
 | Jefferson Peña | Frontend |
 | Benjamin Matos | Tester QA |
 | Luiggi Rosas   | Frontend |
