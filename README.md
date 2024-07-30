@@ -12,14 +12,14 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 - Javascript
 - Tailwindcss
 
-**Backend***
+**Backend**
 - Node.js
 - Spring Boot
 - Java
 - Maven
 
 **QA**
-- 
+
 
 **Diseño**
 - Figma
