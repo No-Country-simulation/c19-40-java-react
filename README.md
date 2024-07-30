@@ -15,10 +15,10 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 **Organización**
 
 #Equipo
-| Nombre            | GitHub                                                 | Rol                                              |
+| Nombre            | Rol                                              |
 |-------------------|--------------------------------------------------------|-------------------------------------------------------|
-| Freddy Guzman | [](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/santiago) | Backend |
-| Jefferson Peña | [](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/agustin) | Frontend |
-| Benjamin Matos  | [](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/michael) | Tester QA |
-| Luiggi Rosas      | [](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/maribel) | Frontend |
+| Freddy Guzman | Backend |
+| Jefferson Peña | Frontend |
+| Benjamin Matos | Tester QA |
+| Luiggi Rosas   | Frontend |
 
