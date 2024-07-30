@@ -7,12 +7,22 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 # Tecnologías Usadas
 
 **Frontend**
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" />
-          
+- Vite.js
+- React.js
+- Javascript
+- Tailwindcss
 **Backend***
+- Node.js
+- Spring Boot
+- Java
+- Maven
 **QA**
+- 
 **Diseño**
+- Figma
 **Organización**
+- Trello
+- Slack
 
 #Equipo
 | Nombre            | Rol                                              |
