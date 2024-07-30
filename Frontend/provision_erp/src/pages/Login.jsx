@@ -19,7 +19,7 @@ const Login = () => {
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcazeHuAcZDzv4_61fPLT-S00XnaKXch2YWQ&s"
                         alt=""
                     />
-                    <form className="flex flex-col space-y-3 items-center w-full">
+                    <form className="flex flex-col space-y-5 items-center w-72">
                         <div className="flex flex-col space-y-2 w-full">
                             <p className="text-xs font-bold">USER</p>
                             <input
@@ -34,8 +34,8 @@ const Login = () => {
                                 className="border-b-2 border-black w-full focus:outline-none"
                             />
                         </div>
-                    </form>
-                    <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 w-full justify-between">
+
+                        <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-10 w-full justify-center">
                         <div className="flex items-center">
                             <input
                                 id="remember-me"
@@ -45,14 +45,17 @@ const Login = () => {
                             <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
                                 Remember me
                             </label>
-                        </div>
-                        <a href="#" className="text-sm text-gray-900 hover:underline">
+                            </div>
+                            <a href="#" className="text-sm text-gray-900 hover:underline">
                             Forgot password?
-                        </a>
-                    </div>
-                    <button className="rounded-full px-10 py-2 bg-principal-color hover:bg-blue-600 text-white">
-                        Login
-                    </button>
+                            </a>
+                        </div>
+
+                        <button className="rounded-full px-10 py-2 bg-principal-color hover:bg-blue-600 text-white">
+                            Login
+                        </button>
+                    </form>
+                   
                 </div>
             </div>
         </div>
