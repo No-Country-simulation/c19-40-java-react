@@ -7,26 +7,22 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 # Tecnologías Usadas
 
 **Frontend**
-- Vite.js
-- React.js
-- Javascript
-- Tailwindcss
+- Vite.js: Un entorno de desarollo rápido y eficiente, optimizado para frameworks modernos.
+- React.js: Una biblioteca de JavaScript para construir interfaces de usuario basadas en componentes.
+- Javascript: Lenguaje de programación esencial para el desarrollo web interactivo.
+- Tailwindcss: Un framework de CSS utilitario para diseñar rápidamente interfaces de usuario.
 
 **Backend**
-- Node.js
-- Spring Boot
-- Java
-- Maven
+- Node.js: Un entorno de ejecución ideal para aplicaciones escalables.
+- Spring Boot: Framework que simplifica el desarrollo de aplicaciones empresariales.
+- Java: Lenguaje orientado a objetos, ampliamente usado en aplicaciones empresariales.
+- Maven: Herramienta que facilita la construcción y manejo de dependencias.
 
 **QA**
-
+- Trello
 
 **Diseño**
 - Figma
-
-**Organización**
-- Trello
-- Slack
 
 # Equipo
 | Nombre            | Rol                                              |
