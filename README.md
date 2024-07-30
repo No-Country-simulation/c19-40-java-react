@@ -11,20 +11,24 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 - React.js
 - Javascript
 - Tailwindcss
+
 **Backend***
 - Node.js
 - Spring Boot
 - Java
 - Maven
+
 **QA**
 - 
+
 **Diseño**
 - Figma
+
 **Organización**
 - Trello
 - Slack
 
-#Equipo
+# Equipo
 | Nombre            | Rol                                              |
 |-------------------|--------------------------------------------------------|
 | Freddy Guzman  | Backend |
