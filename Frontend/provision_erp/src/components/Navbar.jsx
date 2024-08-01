@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
+import { Outlet, Link} from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleProfile = () => {
-    setIsProfileOpen(!isProfileOpen);
-  };
+  
 
   return (
     <>
@@ -42,57 +41,38 @@ const Navbar = () => {
 
         {/* Menú en pantallas grandes */}
         <div className="hidden lg:flex lg:space-x-8 lg:text-white">
-          <a href="#" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Home</a>
-          <a href="#" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">About us</a>
-          <a href="#" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Features</a>
-          <a href="#" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Contact us</a>
+          <Link to="/" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Inicio</Link>
+          <Link to="/about" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Sobre Nosotros</Link>
+          <Link to="/features" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Funcionalidades</Link>
+          <Link to="/contact" className="px-2 py-2 text-xl hover:bg-blue-600 hover:rounded-lg">Contactanos</Link>
+      
         </div>
 
-        <button
-          className="relative z-20"
-          onClick={toggleProfile}
+        <Link
+          to="/login"
+          className="relative z-20 text-white hover:bg-blue-600 px-6 py-2 rounded-lg bg-blue-700"
         >
-          <img
-            className="h-10 w-10 rounded-full"
-            src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg"
-            alt="Not found"
-          />
-        </button>
+          EMPEZAR
+        </Link>
 
         {/* Menú desplegable en pantallas pequeñas */}
         {isOpen && (
           <div className="absolute top-16 left-0 w-full bg-principal-color rounded-lg shadow-lg z-30 lg:hidden">
             <div className="text-white flex flex-col items-center pt-4 space-y-3">
                 {/* Menú desplegable en pantallas pequeñas */}
-              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Home</a>
-              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">About us</a>
-              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Features</a>
-              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Contact us</a>
+                <Link to="/" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Inicio</Link>
+                <Link to="/about" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Sobre Nosotros</Link>
+                <Link to="/features" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Funcionalidades</Link>
+                <Link to="/contact" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Contactanos</Link>
             </div>
           </div>
         )}
 
-        {/* Menú desplegable del perfil */}
-        {isProfileOpen && (
-          <div className="absolute top-3 right-0 w-60 bg-principal-color rounded-lg shadow-lg z-30">
-            <div className="text-white flex flex-col items-center pt-4 space-y-3">
-              <div className='flex flex-row space-x-4 items-center justify-center'>
-                <img
-                  className="h-10 w-10 rounded-full"
-                  src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg"
-                  alt="Not found"
-                />
-                <p>Enterprise Name</p>
-                <button onClick={toggleProfile}>x</button>
-              </div>
-              <hr className='w-full border-white border-1' />
-              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Your Profile</a>
-              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Settings</a>
-              <a href="#" className="text-white px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Log Out</a>
-            </div>
-          </div>
-        )}
+        
+
+        
       </nav>
+      <Outlet />
     </>
   );
 };

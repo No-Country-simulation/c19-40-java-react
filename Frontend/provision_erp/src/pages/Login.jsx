@@ -1,5 +1,9 @@
+
+import { Outlet, Link} from 'react-router-dom';
+
 const Login = () => {
     return (
+    <>
         <div className="flex items-center justify-center h-screen bg-principal-color">
             <div className="flex flex-col md:flex-row w-full max-w-6xl h-3/4 bg-white shadow-lg">
                 {/* Contenedor de la imagen */}
@@ -51,14 +55,15 @@ const Login = () => {
                             </a>
                         </div>
 
-                        <button className="rounded-full px-10 py-2 bg-principal-color hover:bg-blue-600 text-white">
-                            Login
-                        </button>
+                        <Link to="/inicio" className="rounded-full px-10 py-2 bg-principal-color hover:bg-blue-600 text-white">Login</Link>
+
                     </form>
                    
                 </div>
             </div>
         </div>
+        <Outlet />
+    </>
     );
 };
 

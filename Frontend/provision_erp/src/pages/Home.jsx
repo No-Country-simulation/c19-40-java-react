@@ -1,13 +1,13 @@
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil, faGear, faUsers } from '@fortawesome/free-solid-svg-icons';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <div className="min-h-screen bg-gray-100">
+
+    <div className="min-h-screen bg-gray-100">
 
         <section className="bg-black flex flex-col space-y-6 text-center items-center justify-center py-36 px-4">
           <h1 className="text-4xl md:text-5xl text-white font-bold">
@@ -157,10 +157,10 @@ const Home = () => {
 
         </section>
 
-        <Footer />
-
       </div>
-    </>
+      
+      <Footer />
+      </>
   );
 };
 
