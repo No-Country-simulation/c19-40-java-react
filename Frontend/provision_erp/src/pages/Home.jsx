@@ -157,10 +157,10 @@ const Home = () => {
         <section className="mt-20 flex flex-col items-center text-center space-y-10 mb-20 px-4">
 
           <h1 className="text-center text-4xl md:text-7xl font-serif">
-            MEJORA TU NEGOCIO ÚNETE AHORA
+            MEJORA TU NEGOCIO <br />ÚNETE AHORA
           </h1>
 
-          <Link to='/login' className="bg-principal-color px-10 md:px-16 py-6 md:py-12 rounded-lg text-2xl md:text-4xl font-bold text-white hover:bg-blue-600">
+          <Link to='/register' className="bg-principal-color px-10 md:px-16 py-6 md:py-12 rounded-lg text-2xl md:text-4xl font-bold text-white hover:bg-blue-600">
             Empezar
           </Link>
 
