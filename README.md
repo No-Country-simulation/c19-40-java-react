@@ -22,7 +22,7 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 - Trello
 
 **Diseño**
-- Figma: [Figma](URL(https://www.figma.com/design/Dtvw21k4jpPD5DHVQuhm24/Untitled?node-id=0-1&t=rxLmdVr1vQSZjqH2-1))
+- [Figma](URL(https://www.figma.com/design/Dtvw21k4jpPD5DHVQuhm24/Untitled?node-id=0-1&t=rxLmdVr1vQSZjqH2-1))
 
 # Características Principales
 
