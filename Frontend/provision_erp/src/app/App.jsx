@@ -10,6 +10,7 @@ import Home2 from '../Enterprise/Home2';
 import Products from '../Enterprise/Products';
 import Sales from '../Enterprise/Sales';
 import Shoopings from '../Enterprise/Shoopings';
+import Register from '../pages/Register'
 import EnterpriseLayout from '../components/EnterpriseLayout';
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
         </Route>
 
         <Route path="/login" element={<Login />} />
+
+        <Route path="/register" element={<Register />} />
 
         <Route path="/home" element={<EnterpriseLayout />}>
               

@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
 
         <Link
-          to="/login"
+          to="/register"
           className="relative z-20 text-white hover:bg-blue-600 px-6 py-2 rounded-lg bg-blue-700"
         >
           EMPEZAR

@@ -17,7 +17,7 @@ const Login = () => {
                 {/* Contenedor del formulario */}
                 <div className="flex flex-col space-y-5 items-center justify-center p-6 w-full md:w-[40%] h-full">
                     <h1 className="font-bold text-lg md:text-xl">ProVision</h1>
-                    <h1 className="text-xl md:text-2xl font-serif">BIENVENIDO DE NUEVO</h1>
+                    <h1 className="text-xl md:text-2xl font-serif">BIENVENIDO</h1>
                     <img
                         className="h-16 w-20 md:h-20 md:w-24 rounded-full border-b-2"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcazeHuAcZDzv4_61fPLT-S00XnaKXch2YWQ&s"
@@ -25,21 +25,21 @@ const Login = () => {
                     />
                     <form className="flex flex-col space-y-5 items-center w-72">
                         <div className="flex flex-col space-y-2 w-full">
-                            <p className="text-xs font-bold">USER</p>
+                            <p className="text-xs font-bold">USUARIO</p>
                             <input
                                 type="text"
                                 className="border-b-2 border-black w-full focus:outline-none"
                             />
                         </div>
                         <div className="flex flex-col space-y-2 w-full">
-                            <p className="text-xs font-bold">PASSWORD</p>
+                            <p className="text-xs font-bold">CONTRASEÑA</p>
                             <input
                                 type="password"
                                 className="border-b-2 border-black w-full focus:outline-none"
                             />
                         </div>
 
-                        <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-10 w-full justify-center">
+                        <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-20 w-full justify-center">
                         <div className="flex items-center">
                             <input
                                 id="remember-me"
@@ -47,15 +47,15 @@ const Login = () => {
                                 className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-black rounded-full"
                             />
                             <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                                Remember me
+                                Recordar contraseña
                             </label>
                             </div>
-                            <a href="#" className="text-sm text-gray-900 hover:underline">
-                            Forgot password?
-                            </a>
+                            <Link to="/register" className="text-sm text-gray-900 hover:underline">
+                               Registrate
+                            </Link>
                         </div>
 
-                        <Link to="/home" className="rounded-full px-10 py-2 bg-principal-color hover:bg-blue-600 text-white">Login</Link>
+                        <Link to="/home" className="rounded-full px-10 py-2 bg-principal-color hover:bg-blue-600 text-white">INGRESAR</Link>
 
                     </form>
                    
