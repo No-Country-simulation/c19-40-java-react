@@ -28,7 +28,7 @@ ERP para pequeñas empresas. Nuestro software ofrece una administración simplif
 | Nombre            | Rol                                              |
 |-------------------|--------------------------------------------------------|
 | Freddy Guzman  | Backend |
-| Jefferson Peña | Frontend/Diseñador UX/UI |
+| Jefferson Peña | Frontend |
 | Benjamin Matos | Tester QA |
-| Luiggi Rosas   | Frontend |
+| Luiggi Rosas   | Frontend/Diseñador UX/UI |
 
