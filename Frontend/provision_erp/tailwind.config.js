@@ -8,7 +8,7 @@ module.exports = {
       colors:{
         "principal-color":"#585EF2",
         "cards-color":"#ECECF1",
-      }
+      },
     },
   },
   plugins: [],

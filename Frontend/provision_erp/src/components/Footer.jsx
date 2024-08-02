@@ -32,9 +32,28 @@ const Footer = () => {
 
                 <div className="flex flex-col space-y-6 text-white w-full sm:w-auto">
                     <p className="text-lg font-bold">Siguenos</p>
-                    <a href="#" className="text-lg hover:underline">Instagram</a>
-                    <a href="#" className="text-lg hover:underline">Twitter</a>
-                    <a href="#" className="text-lg hover:underline">LinkedIn</a>
+                    <div className="flex space-x-4 mr-10">
+                        <img
+                            src="https://www.elfinanciero.com.mx/resizer/juWlcrqrLAk6N14bwFl-4GH316Y=/1440x810/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/X347YSAZFBHQVFIQY5RWE6CFJE.jpg"
+                            alt="Not found"
+                            className="w-12 rounded-lg"
+                        />
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_de_Facebook.png/220px-Logo_de_Facebook.png"
+                            alt="Not found"
+                            className="w-12 rounded-lg"
+                        />
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png"
+                            alt="Not found"
+                            className="w-12 rounded-lg"
+                        />
+                        <img
+                            src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw=w240-h480-rw"
+                            alt="Not found"
+                            className="w-12 rounded-lg"
+                        />
+                    </div>
                 </div>
 
             </div>

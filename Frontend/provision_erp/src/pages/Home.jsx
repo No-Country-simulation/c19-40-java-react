@@ -13,7 +13,7 @@ const Home = () => {
     <section
       className="bg-black flex flex-col space-y-6 text-center items-center justify-center py-36 px-4"
       style={{
-        backgroundImage: "url('https://i.pinimg.com/originals/36/40/f7/3640f7baf3f68a3d526efd4491b3ebd5.jpg')",
+        backgroundImage: "url('https://img.freepik.com/fotos-premium/empresario-escribiendo-notas-importantes-papel-pluma-comunicacion-eficaz_561855-52963.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
