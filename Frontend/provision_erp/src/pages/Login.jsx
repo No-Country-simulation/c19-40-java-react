@@ -55,7 +55,7 @@ const Login = () => {
                             </a>
                         </div>
 
-                        <Link to="/inicio" className="rounded-full px-10 py-2 bg-principal-color hover:bg-blue-600 text-white">Login</Link>
+                        <Link to="/home" className="rounded-full px-10 py-2 bg-principal-color hover:bg-blue-600 text-white">Login</Link>
 
                     </form>
                    

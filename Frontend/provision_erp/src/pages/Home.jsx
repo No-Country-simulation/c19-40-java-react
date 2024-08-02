@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil, faGear, faUsers } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
+import { Link} from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -9,15 +10,23 @@ const Home = () => {
 
     <div className="min-h-screen bg-gray-100">
 
-        <section className="bg-black flex flex-col space-y-6 text-center items-center justify-center py-36 px-4">
-          <h1 className="text-4xl md:text-5xl text-white font-bold">
-            ProVision: Aprende a Manejar <br />tu negocio
-          </h1>
-          <p className="text-lg text-white">
-            Con ProVision podrás gestionar y automatizar tus procesos empresariales <br />
-            de manera más sencilla y eficiente
-          </p>
-        </section>
+    <section
+      className="bg-black flex flex-col space-y-6 text-center items-center justify-center py-36 px-4"
+      style={{
+        backgroundImage: "url('https://i.pinimg.com/originals/36/40/f7/3640f7baf3f68a3d526efd4491b3ebd5.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <h1 className="text-4xl md:text-5xl text-white font-bold">
+        ProVision: Aprende a Manejar <br />tu negocio
+      </h1>
+      <p className="text-lg text-white">
+        Con ProVision podrás gestionar y automatizar tus procesos empresariales <br />
+        de manera más sencilla y eficiente
+      </p>
+    </section>
 
         <section className="flex flex-col space-y-10 text-center items-center justify-center pt-16 pb-24 px-4">
           <h2 className='text-3xl'>¿Qué es ProVision?</h2>
@@ -151,9 +160,9 @@ const Home = () => {
             MEJORA TU NEGOCIO ÚNETE AHORA
           </h1>
 
-          <button className="bg-principal-color px-10 md:px-16 py-6 md:py-12 rounded-lg text-2xl md:text-4xl font-bold text-white hover:bg-blue-600">
+          <Link to='/login' className="bg-principal-color px-10 md:px-16 py-6 md:py-12 rounded-lg text-2xl md:text-4xl font-bold text-white hover:bg-blue-600">
             Empezar
-          </button>
+          </Link>
 
         </section>
 

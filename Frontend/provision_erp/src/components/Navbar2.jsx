@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet, Link} from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 const Navbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -7,24 +7,21 @@ const Navbar = () => {
   const toggleProfile = () => {
     setIsProfileOpen(!isProfileOpen);
   };
-  
 
   return (
     <>
-      <nav className="relative flex items-center justify-between bg-principal-color h-24 px-6 lg:px-12">
+      <nav className="relative flex items-center justify-between bg-principal-color h-24 px-10 lg:px-12">
+        {/* Ajuste para evitar solapamientos con el sidebar */}
+        <div ></div>
 
-        <div></div>
-
-        <div></div>
-
-             {/* Buscador */}
-        <div className="relative hidden lg:block">
+        {/* Buscador */}
+        <div className="relative hidden lg:block flex items-center">
           <input
             type="text"
-            className="h-10 px-4 pr-10 w-96 rounded-full text-black focus:outline-none"
+            className="h-10 px-3 pr-10 w-96 rounded-full text-black focus:outline-none"
             placeholder="Buscar..."
           />
-          <button className="absolute right-0 top-0 mt-2 mr-3">
+          <button className="absolute right-2 top-1/2 transform -translate-y-1/2">
             <svg
               className="w-6 h-6 text-gray-500"
               fill="none"
@@ -49,7 +46,7 @@ const Navbar = () => {
           <img
             className="h-10 w-10 rounded-full"
             src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg"
-            alt="Not found"
+            alt="Perfil"
           />
         </button>
 
@@ -61,24 +58,19 @@ const Navbar = () => {
                 <img
                   className="h-10 w-10 rounded-full"
                   src="https://thumbs.dreamstime.com/b/l%C3%ADnea-icono-del-negro-avatar-perfil-de-usuario-121102131.jpg"
-                  alt="Not found"
+                  alt="Perfil"
                 />
                 <p className='text-xl'>Enterprise Name</p>
                 <button onClick={toggleProfile}>x</button>
               </div>
               <hr className='w-full border-white border-1' />
-              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Tu perfil</a>
-              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Opciones</a>
-              <a href="#" className="text-white text-xl px-2 py-2  hover:bg-blue-600 hover:rounded-lg">Salir</a>
+              <a href="#" className="text-white text-xl px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Tu perfil</a>
+              <a href="#" className="text-white text-xl px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Opciones</a>
+              <a href="#" className="text-white text-xl px-2 py-2 hover:bg-blue-600 hover:rounded-lg">Salir</a>
             </div>
           </div>
         )}
-
-        
-
-        
       </nav>
-      <Outlet />
     </>
   );
 };
